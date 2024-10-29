@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package Vista;
-
-
 import Modelo.Combo;
 import Modelo.Config;
 import Modelo.Eventos;
@@ -24,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author USUARIO
  */
-public final class Sistema extends javax.swing.JFrame {
+public final class Sistema1 extends javax.swing.JFrame {
     Date fechaVenta = new Date();
     String fechaActual = new SimpleDateFormat("dd/MM/yyyy").format(fechaVenta);
 
@@ -38,10 +36,10 @@ public final class Sistema extends javax.swing.JFrame {
     double Totalpagar = 0.00;
     
 
-    public Sistema() {
+    public Sistema1() {
         initComponents();
     }
-    public Sistema (login priv){
+    public Sistema1 (login priv){
         initComponents();
         this.setLocationRelativeTo(null);
 
@@ -56,10 +54,6 @@ public final class Sistema extends javax.swing.JFrame {
     }
     public void ListarCliente() {
 
-        modelo = (DefaultTableModel) TableCliente.getModel();
-        Object[] ob = new Object[6];
-
-        TableCliente.setModel(modelo);
 
     }
 
@@ -91,40 +85,25 @@ public final class Sistema extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        txtCodigoVenta = new javax.swing.JTextField();
-        txtDescripcionVenta = new javax.swing.JTextField();
-        txtPrecioVenta = new javax.swing.JTextField();
         txtStockDisponible = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         TableVenta = new javax.swing.JTable();
         LabelTotal = new javax.swing.JLabel();
         btnGraficar = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox3 = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         TableCliente = new javax.swing.JTable();
         jPanel9 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        txtNombreCliente = new javax.swing.JTextField();
         txtTelefonoCliente = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
-        btnEliminarCliente = new javax.swing.JButton();
-        btnNuevoCliente = new javax.swing.JButton();
         jComboBox2 = new javax.swing.JComboBox<>();
-        jPanel6 = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        TableVentas = new javax.swing.JTable();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
-        Midate1 = new com.toedter.calendar.JDateChooser();
-        jLabel39 = new javax.swing.JLabel();
-        txtDescripcionVenta1 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -134,7 +113,7 @@ public final class Sistema extends javax.swing.JFrame {
         btnNuevaVenta.setBackground(new java.awt.Color(153, 153, 153));
         btnNuevaVenta.setForeground(new java.awt.Color(255, 255, 255));
         btnNuevaVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Nventa.png"))); // NOI18N
-        btnNuevaVenta.setText("Nueva Pregunta");
+        btnNuevaVenta.setText("Preguntas");
         btnNuevaVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnNuevaVenta.setFocusable(false);
         btnNuevaVenta.addActionListener(new java.awt.event.ActionListener() {
@@ -212,56 +191,26 @@ public final class Sistema extends javax.swing.JFrame {
         jLabel3.setText("Curso");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setText("Seccion");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel6.setText("Puntos");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 50, -1, -1));
-
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 255));
         jLabel7.setText("N° SESION");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
-
-        txtCodigoVenta.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtCodigoVentaKeyPressed(evt);
-            }
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtCodigoVentaKeyTyped(evt);
-            }
-        });
-        jPanel2.add(txtCodigoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 70, 300, 30));
-
-        txtDescripcionVenta.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtDescripcionVentaKeyTyped(evt);
-            }
-        });
-        jPanel2.add(txtDescripcionVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 191, 30));
-
-        txtPrecioVenta.setEditable(false);
-        jPanel2.add(txtPrecioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 70, 80, 30));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 50, -1, -1));
 
         txtStockDisponible.setEditable(false);
-        jPanel2.add(txtStockDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 79, 30));
+        jPanel2.add(txtStockDisponible, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 79, 30));
 
         TableVenta.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "CLASE", "SECCION", "SESION", "PREGUNTA"
+                "CLASE", "PREGUNTA", "RESPUESTA", "CONDICION"
             }
         ));
         jScrollPane1.setViewportView(TableVenta);
         if (TableVenta.getColumnModel().getColumnCount() > 0) {
             TableVenta.getColumnModel().getColumn(0).setPreferredWidth(60);
-            TableVenta.getColumnModel().getColumn(1).setPreferredWidth(100);
-            TableVenta.getColumnModel().getColumn(2).setPreferredWidth(40);
-            TableVenta.getColumnModel().getColumn(3).setPreferredWidth(50);
+            TableVenta.getColumnModel().getColumn(1).setPreferredWidth(50);
         }
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 843, 191));
@@ -275,16 +224,21 @@ public final class Sistema extends javax.swing.JFrame {
                 btnGraficarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnGraficar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 10, -1, -1));
+        jPanel2.add(btnGraficar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 60, -1, -1));
 
-        jLabel11.setText("Pregunta");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 50, -1, -1));
+        jLabel11.setText("Condicion:");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 50, -1, -1));
 
-        jButton2.setText("GENERAR PREGUNTA");
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 200, 30));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Habilitado", "Deshabilitado" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 70, 190, 30));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Curso 1", "Curso 2", "Curso 3" }));
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 190, 30));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Curso 1", "Curso 2", "Curso 3" }));
+        jPanel2.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 190, 30));
 
         jTabbedPane1.addTab("1", jPanel2);
 
@@ -296,7 +250,7 @@ public final class Sistema extends javax.swing.JFrame {
 
             },
             new String [] {
-                "PREGUNTA", "RESPUESTA", "ALUMNO"
+                "PREGUNTA", "RESPUESTA", "PUNTOS"
             }
         ));
         TableCliente.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -319,29 +273,14 @@ public final class Sistema extends javax.swing.JFrame {
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel12.setText("CURSO");
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel13.setText("SECCION");
-
         jLabel14.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel14.setText("SESION");
 
-        btnEliminarCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
-        btnEliminarCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnEliminarCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarClienteActionPerformed(evt);
-            }
-        });
-
-        btnNuevoCliente.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/nuevo.png"))); // NOI18N
-        btnNuevoCliente.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNuevoClienteActionPerformed(evt);
-            }
-        });
-
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Curso 1", "Curso 2", "Curso 3" }));
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel8.setText("PUNTOS ACUMULADOS");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
@@ -353,18 +292,16 @@ public final class Sistema extends javax.swing.JFrame {
                         .addContainerGap()
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
-                            .addComponent(jLabel13)
                             .addComponent(jLabel14))
-                        .addGap(32, 32, 32)
+                        .addGap(40, 40, 40)
                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(btnEliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44)
-                        .addComponent(btnNuevoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(14, 14, 14)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
@@ -374,19 +311,15 @@ public final class Sistema extends javax.swing.JFrame {
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel12)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNombreCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13))
-                .addGap(27, 27, 27)
+                .addGap(54, 54, 54)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtTelefonoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
-                .addGap(23, 23, 23)
+                .addGap(71, 71, 71)
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btnEliminarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnNuevoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(103, 103, 103))
+                    .addComponent(jLabel8)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(116, 116, 116))
         );
 
         jPanel3.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 270, 330));
@@ -394,82 +327,19 @@ public final class Sistema extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("2", jPanel3);
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 102));
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        TableVentas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "CLIENTE", "VENDEDOR", "TOTAL"
-            }
-        ));
-        TableVentas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                TableVentasMouseClicked(evt);
-            }
-        });
-        jScrollPane5.setViewportView(TableVentas);
-        if (TableVentas.getColumnModel().getColumnCount() > 0) {
-            TableVentas.getColumnModel().getColumn(0).setPreferredWidth(20);
-            TableVentas.getColumnModel().getColumn(1).setPreferredWidth(60);
-            TableVentas.getColumnModel().getColumn(2).setPreferredWidth(60);
-            TableVentas.getColumnModel().getColumn(3).setPreferredWidth(60);
-        }
-
-        jPanel6.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 766, 310));
-
-        jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel16.setText("RANKING");
-        jPanel6.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 40, 280, -1));
-
-        jLabel38.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel38.setText("Curso");
-        jPanel6.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
-        jPanel6.add(Midate1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 210, 30));
-
-        jLabel39.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel39.setText("Seccion");
-        jPanel6.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
-
-        txtDescripcionVenta1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtDescripcionVenta1KeyTyped(evt);
-            }
-        });
-        jPanel6.add(txtDescripcionVenta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 191, 30));
-
-        jTabbedPane1.addTab("5", jPanel6);
-
         getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 860, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnNuevoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoClienteActionPerformed
-        // TODO add your handling code here:
-        LimpiarCliente();
-
-        btnEliminarCliente.setEnabled(false);
-
-    }//GEN-LAST:event_btnNuevoClienteActionPerformed
-
-    private void btnEliminarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarClienteActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_btnEliminarClienteActionPerformed
-
     private void TableClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableClienteMouseClicked
         // TODO add your handling code here:
 
-        btnEliminarCliente.setEnabled(true);
+
 
         int fila = TableCliente.rowAtPoint(evt.getPoint());
 
 
-        txtNombreCliente.setText(TableCliente.getValueAt(fila, 2).toString());
         txtTelefonoCliente.setText(TableCliente.getValueAt(fila, 3).toString());
 
     }//GEN-LAST:event_TableClienteMouseClicked
@@ -481,27 +351,11 @@ public final class Sistema extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnGraficarActionPerformed
 
-    private void txtDescripcionVentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescripcionVentaKeyTyped
-        // TODO add your handling code here:
-        event.textKeyPress(evt);
-    }//GEN-LAST:event_txtDescripcionVentaKeyTyped
-
-    private void txtCodigoVentaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoVentaKeyTyped
-        // TODO add your handling code here:
-        event.numberKeyPress(evt);
-    }//GEN-LAST:event_txtCodigoVentaKeyTyped
-
-    private void txtCodigoVentaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCodigoVentaKeyPressed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_txtCodigoVentaKeyPressed
-
     private void btnClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClientesActionPerformed
         // TODO add your handling code here:
         LimpiarTable();
         ListarCliente();
 
-        btnEliminarCliente.setEnabled(false);
         LimpiarCliente();
         jTabbedPane1.setSelectedIndex(1);
     }//GEN-LAST:event_btnClientesActionPerformed
@@ -511,14 +365,9 @@ public final class Sistema extends javax.swing.JFrame {
         jTabbedPane1.setSelectedIndex(0);
     }//GEN-LAST:event_btnNuevaVentaActionPerformed
 
-    private void txtDescripcionVenta1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDescripcionVenta1KeyTyped
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtDescripcionVenta1KeyTyped
-
-    private void TableVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TableVentasMouseClicked
-        // TODO add your handling code here:
-        int fila = TableVentas.rowAtPoint(evt.getPoint());
-    }//GEN-LAST:event_TableVentasMouseClicked
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -537,20 +386,21 @@ public final class Sistema extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Sistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sistema1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Sistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sistema1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Sistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sistema1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Sistema.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Sistema1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Sistema().setVisible(true);
+                new Sistema1().setVisible(true);
             }
         });
     }
@@ -558,53 +408,38 @@ public final class Sistema extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel LabelTotal;
     private javax.swing.JLabel LabelVendedor;
-    private com.toedter.calendar.JDateChooser Midate1;
     private javax.swing.JTable TableCliente;
     private javax.swing.JTable TableVenta;
-    private javax.swing.JTable TableVentas;
     private javax.swing.JButton btnClientes;
-    private javax.swing.JButton btnEliminarCliente;
     private javax.swing.JButton btnGraficar;
     private javax.swing.JButton btnNuevaVenta;
-    private javax.swing.JButton btnNuevoCliente;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel tipo;
-    private javax.swing.JTextField txtCodigoVenta;
-    private javax.swing.JTextField txtDescripcionVenta;
-    private javax.swing.JTextField txtDescripcionVenta1;
-    private javax.swing.JTextField txtNombreCliente;
-    private javax.swing.JTextField txtPrecioVenta;
     private javax.swing.JTextField txtStockDisponible;
     private javax.swing.JTextField txtTelefonoCliente;
     // End of variables declaration//GEN-END:variables
     private void LimpiarCliente() {
 
 
-        txtNombreCliente.setText("");
+
         txtTelefonoCliente.setText("");
 
     }
@@ -622,11 +457,9 @@ public final class Sistema extends javax.swing.JFrame {
     }
 
     private void LimparVenta() {
-        txtCodigoVenta.setText("");
-        txtDescripcionVenta.setText("");
 
         txtStockDisponible.setText("");
-        txtPrecioVenta.setText("");
+
 
     }
 
