@@ -11,7 +11,7 @@ import Vista.Login;
  *
  * @author USUARIO
  */
-public class SistemaVenta {
+public class Sistema {
 
     /**
      * @param args the command line arguments
